@@ -27,7 +27,7 @@ class OngoingFragment : Fragment(),Onlisten {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        (activity as AppCompatActivity).supportActionBar!!.hide()
+
         val binding = FragmentOngoingBinding.inflate(inflater)
         binding.lifecycleOwner = this
         binding.dataon =sharedViewModel

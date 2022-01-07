@@ -81,14 +81,13 @@ class DashboardActivity : AppCompatActivity() {
         adapter.addFragment(OngoingFragment(), "Ongoing")
         adapter.addFragment(UpcomingFragment(), "Upcoming")
 
-        viewPager.setAdapter(adapter)
+        viewPager.adapter = adapter
     }
 
-    class ViewPagerAdapter: FragmentPagerAdapter {
+    class ViewPagerAdapter public constructor(supportFragmentManager: FragmentManager) :
+        FragmentPagerAdapter(supportFragmentManager) {
         private final var fragmentList1: ArrayList<Fragment> = ArrayList()
         private final var fragmentTitleList1: ArrayList<String> = ArrayList()
-
-        public constructor(supportFragmentManager: FragmentManager) : super(supportFragmentManager)
 
         override fun getItem(position: Int): Fragment {
             return fragmentList1.get(position)
